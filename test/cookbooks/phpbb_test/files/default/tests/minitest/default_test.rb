@@ -41,5 +41,15 @@ describe_recipe 'phpbb_test::default' do
     it "check the content of the virtual host file" do
       file('/etc/apache2/sites-enabled/phpbb1.conf').must_include("ServerName phpbb1.local")
     end
+
+    it "do http request" do
+      conn = Faraday.new(:url => 'http://phpbb1.local') do |faraday|
+        faraday.request  :url_encoded
+        faraday.response :logger
+        faraday.adapter  Faraday.default_adapter
+      end
+      page = conn.get('/install/index.php').body
+      expect(page).to match /Install/
+    end
   end
 end
