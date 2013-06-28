@@ -1,7 +1,7 @@
 #
 # Author:: Sachin Sagar Rai <millisami@gmail.com>
 # Cookbook Name:: phpbb
-# Recipe:: default
+# Resource:: settings
 #
 # Copyright (C) 2013 Millisami
 #
@@ -18,3 +18,11 @@
 # limitations under the License.
 #
 
+actions :create
+default_action :create
+
+attribute :admin_name, kind_of: String, required: true
+attribute :admin_pass1, kind_of: String, required: true
+attribute :admin_pass2, kind_of: String, required: true
+attribute :board_email1, kind_of: String, required: true
+attribute :board_email2, kind_of: String, required: true

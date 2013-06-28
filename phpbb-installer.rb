@@ -10,7 +10,8 @@ require 'launchy'
 Capybara.run_server = false
 Capybara.default_driver = :poltergeist
 Capybara.javascript_driver = :poltergeist
-Capybara.app_host = 'http://phpbb.local'
+# Capybara.app_host = 'http://phpbb.local'
+Capybara.app_host = 'http://forums.mysocialprogress.com'
 
 class Installer
   include Capybara::DSL
@@ -21,9 +22,9 @@ class Installer
     click_button("Start install")
 
     fill_in "dbhost", with: "localhost"
-    fill_in "dbname", with: "phpbb3"
-    fill_in "dbuser", with: "phpbb_usr"
-    fill_in "dbpasswd", with: "sekret"
+    fill_in "dbname", with: "msp_phpbb"
+    fill_in "dbuser", with: "msp__phpbb__usr"
+    fill_in "dbpasswd", with: "the-sekret"
 
     fill_in "table_prefix", with: "forum_"
     click_button "Proceed to next step"
@@ -39,10 +40,11 @@ class Installer
     click_button "Proceed to next step"
     click_button "Proceed to next step"
 
-    fill_in "server_name", with: "phpbb.local"
+    fill_in "server_name", with: "http://forums.mysocialprogress.com"
     click_button "Proceed to next step"
     click_button "Proceed to next step"
     click_button "Login"
+    save_and_open_page
   end
 end
 

@@ -1,5 +1,5 @@
 
-include_recipe "phpbb::auto_install"
+# include_recipe "phpbb::auto_install"
 
 chef_gem 'faraday'
 chef_gem 'rspec-expectations'
