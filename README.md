@@ -18,13 +18,9 @@ Now you can use the following LWRP in your cookbook's recipe.
       db_user "phpbb_user"
       db_password "phpbb_passwd"
       domain "phpbb.local"
-      settings do
-        admin_name "admin"
-        admin_password "sekret"
-        board_email_1 "admin1@example.com"
-        board_email_2 "admin2@example.com"
-      end
     end
+
+Then navigate to `your-domain.com/install`
 
 # Attributes
 

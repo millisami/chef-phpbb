@@ -32,8 +32,6 @@ action :create do
   run_context.include_recipe "mysql::server"
   run_context.include_recipe "mysql::ruby"
 
-
-
   package "imagemagick" do
     action :install
   end
