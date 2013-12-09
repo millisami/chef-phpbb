@@ -29,3 +29,7 @@ Then navigate to `your-domain.com/install`
 # Author
 
 Author:: Millisami (<millisami@gmail.com>)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/millisami/chef-phpbb/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
